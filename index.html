@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ХО-Бой</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="icon" type="image/png" href="./assets/logo.jpg" />
+
+  <!-- Yandex Games SDK -->
+  <script src="/sdk.js" defer></script>
+
+  <style>
+    /* Основные блокировки выделения и тапа */
+    html, body, button, .cell, * {
+      user-select: none !important;
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      -webkit-touch-callout: none !important;
+      -webkit-tap-highlight-color: transparent !important;
+      touch-action: manipulation !important;
+      -webkit-user-drag: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <h1><span class="span-red">Х</span><span class="span-blue">О</span>-Бой</h1>
+
+  <div id="menu" class="fullscreen-menu">
+    <div class="menu_center">
+      <h2 class="h2"><span class="span-red">Х</span><span class="span-blue">О</span>-Бой</h2>
+      <button id="btn-normal" class="mode-btn active">Обычный режим</button>
+      <button id="btn-timer" class="mode-btn">Режим с таймером</button>
+    </div>
+  </div>
+
+  <div id="game-container" class="game-container" style="display:none;">
+    <div id="timer" style="display:none;">
+      ⏱️ <span id="time-player"></span><span id="time-left"></span>с
+    </div>
+
+    <div id="game">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+
+    <div id="status"></div>
+    <div class="game_buttons">
+      <button id="restartBtn">Начать заново</button>
+      <button id="backToMenuBtn">Назад в меню</button>
+    </div>
+  </div>
+
+  <audio id="sound-move" src="./audio/66717_931655-lq.mp3" preload="auto"></audio>
+  <audio id="sound-win" src="./audio/331912_3248244-lq.mp3" preload="auto"></audio>
+  <audio id="sound-draw" src="./audio/cartoon_boing.ogg" preload="auto"></audio>
+  <audio id="sound-warning" src="./audio/Slow-clock-ticking-sound-effect.mp3" preload="auto" loop></audio>
+
+  <script src="./js/script.js" defer></script>
+</body>
+
+</html>
